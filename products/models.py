@@ -1,18 +1,19 @@
 from django.db import models
 
+
 # Create your models here.
 # модели = таблицы
 
 class ProductCategory(models.Model):
     name = models.CharField(max_length=256, unique=True)
-    description = models.TextField(blank=True) #описания
-
+    description = models.TextField(blank=True)  # описания
 
     class Meta:
         verbose_name_plural = 'Product Categories'
 
     def __str__(self):
         return self.name
+
 
 class Product(models.Model):
     name = models.CharField(max_length=256)
